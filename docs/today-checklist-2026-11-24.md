@@ -25,4 +25,4 @@
 - [プロジェクトダッシュボード](https://github.com/asakuramk/project-dashboard)
 
 ## 元のChatGPT会話
-この会話の固有URLはまだ取得できていません。ユーザーがChatGPTの「共有」から取得したURL、またはブラウザの会話URLを確認でき次第、ここにワンタップ用リンクを追加します。URL未確認のため、別の会話に誤誘導するリンクは登録しません。
+[このChatGPTメインチャットに戻る（共有リンク）](https://chatgpt.com/share/6b04bdf8-e19c-83e8-bdba-2ba2ba00db2b)
