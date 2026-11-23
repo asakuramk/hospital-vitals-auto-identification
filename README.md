@@ -1,2 +1,14 @@
-# hospital-vitals-auto-identification
-Automatic patient identification and bedside vital-sign monitoring using ESP32 and BLE
+# 病棟バイタル測定・患者自動識別システム
+
+ESP32とBluetooth Low Energy（BLE）を活用し、共用の血圧計で測定した際のベッド位置推定と患者識別を検討するプロジェクトです。
+
+## 目的
+看護師が追加のスマートフォンやRFID端末を持ち歩かずに、測定結果を適切な患者に紐付ける仕組みを段階的に検証します。**位置推定だけで患者を確定しない**ことを安全原則とし、電子カルテへの自動登録は最後の段階とします。
+
+## 資料
+- [システム構成](docs/architecture.md)
+- [院内調査票](docs/site-survey.md)
+- [4床室での実証実験計画](docs/poc-plan.md)
+- [開発ロードマップ](docs/roadmap.md)
+
+公開リポジトリには実在患者の情報、認証情報、院内ネットワークの機密情報を登録しません。
