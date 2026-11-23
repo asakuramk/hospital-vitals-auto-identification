@@ -25,4 +25,4 @@
 - [プロジェクトダッシュボード](https://github.com/asakuramk/project-dashboard)
 
 ## 元のChatGPT会話
-[このChatGPTメインチャットに戻る（共有リンク）](https://chatgpt.com/share/6b04bdf8-e19c-83e8-bdba-2ba2ba00db2b)
+[このChatGPTメインチャットに戻る（元の会話・ログインが必要）](https://chatgpt.com/c/6b04b04d-af60-83ee-80c2-16fea50f2474)
