@@ -1,13 +1,13 @@
-# Roadmap
+# 開発ロードマップ
 
-1. Investigate electronic board and authoritative patient/bed assignments.
-2. Define fictional patient/room/bed data model with source and update timestamps.
-3. Validate ESP32/BLE positioning in one four-bed room.
-4. Design independent patient confirmation and uncertainty handling.
-5. Validate compatible monitor measurement transfer and timing.
-6. Measure workflow duration and error rates against current practice.
-7. Conduct clinical risk, privacy and security review.
-8. Implement audited EHR integration last.
+1. 電子インフォメーションボードと正式な患者・ベッド割当情報の取得方法を調査します。
+2. 情報源と更新日時を持つ、架空の患者・病室・ベッド情報モデルを設計します。
+3. 4床室でESP32とBLEによる位置推定を検証します。
+4. 独立した患者本人確認と、不確実な場合の判定保留処理を設計します。
+5. 対応する血圧計からの測定値取得と時刻の整合性を検証します。
+6. 現行業務と比較して所要時間、誤登録率などを評価します。
+7. 臨床上のリスク、個人情報保護、セキュリティについて院内審査を行います。
+8. 最後に監査記録を備えた電子カルテ連携を実装します。
 
-## Commercial benchmark questions
-Ask Nipro HN LINE and comparable vendors exactly how shared-device measurements are matched to patient IDs, whether identification is manual, barcode-based or automatic, and how wrong-patient records are prevented. Do not assume room-location identification is a supported feature.
+## 既存製品との比較で確認すること
+ニプロのHN LINEなどの提供元に、共用測定器の測定値を患者IDへどう紐付けるのか、手動選択・バーコード・自動識別のどの方式か、患者取り違えをどう防ぐかを確認します。位置情報による患者自動識別機能があるとは、資料確認前に判断しません。
