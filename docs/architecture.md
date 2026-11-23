@@ -1,17 +1,18 @@
-# System architecture
+# システム構成案
 
-Goal: identify the bedside location of a shared wireless blood-pressure monitor with no additional device carried by nurses. EHR integration is deferred.
+## 目的
+共用の無線血圧計がどのベッド付近で使われたかを推定し、正しい患者への測定値登録につなげます。看護師が追加端末を携帯する運用は想定しません。電子カルテ連携は後段で検討します。
 
-## Data flow
-1. Compatible BLE blood-pressure monitor emits discoverable radio signals and, if supported, measurement records.
-2. Fixed ESP32 receivers collect receiver ID, timestamp, device identifier (where available), and RSSI.
-3. An on-premises server estimates room/bed proximity and records confidence.
-4. A separately validated room/bed/patient assignment source supplies candidate patient IDs.
-5. Identity confirmation and clinical safety checks precede any patient-specific record or EHR submission.
+## 処理の流れ
+1. 対応するBLE血圧計から検出可能な電波を取得します。機種が対応する場合のみ測定値も取得します。
+2. 固定設置したESP32受信機が、受信機ID、時刻、取得可能な機器識別子、受信信号強度（RSSI）を記録します。
+3. 院内サーバーで病室・ベッド付近の位置と推定の確信度を算出します。
+4. 別途確認した病室・ベッド・患者の割当情報から候補患者IDを照合します。
+5. 独立した患者確認と安全確認を経て、患者別記録への紐付けや電子カルテ送信を許可します。
 
-## Limitations
-- RSSI is not reliable proof of an exact bed, especially with curtains, metal furniture and people moving.
-- Some monitors do not advertise continuously; BLE connections or encryption may limit access.
-- A board manually updated by nurses may be stale and may contain names without patient IDs.
-- Bed assignment is not proof that the person measured is the assigned patient.
-- No patient data should be sent to public GitHub. Use fictional data in development.
+## 技術上・運用上の注意
+- RSSIだけでは正確なベッド位置を保証できません。カーテン、金属製家具、人の移動で変動します。
+- 血圧計の機種によっては常時BLE電波を発信せず、暗号化や接続制限がある場合があります。
+- 電子インフォメーションボードが手入力の場合、患者情報が古い可能性があります。患者IDを持たない場合もあります。
+- ベッドの割当情報だけでは、実際に測定した患者本人と断定できません。
+- 公開GitHubには実患者情報を置かず、開発では架空データを使用します。
