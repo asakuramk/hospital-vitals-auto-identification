@@ -1,28 +1,28 @@
-# Hospital investigation questionnaire
+# 院内調査票
 
-## Electronic information board
-- Manufacturer, product, model, management software and vendor?
-- Who updates it, using which terminal, and how frequently?
-- Are names typed manually or selected from a patient list?
-- Does the system store patient IDs, room IDs and bed IDs?
-- Is it connected to the EHR or bed-management system?
-- Is authorized read-only API, HL7, CSV or database export supported?
-- Are update timestamps and change history available?
-- How are transfers, discharges and stale entries handled?
+## 電子インフォメーションボード
+- メーカー、製品名、型番、管理ソフトウェア、販売・保守業者は何ですか。
+- 誰が、どの端末で、どの程度の頻度で情報を更新していますか。
+- 患者名は手入力ですか。それとも患者一覧から選択しますか。
+- 患者ID、病室ID、ベッドIDを内部に保持していますか。
+- 電子カルテや病床管理システムと連携していますか。
+- 正規の読み取り専用API、HL7連携、CSV出力、データベース参照などは利用できますか。
+- 更新日時や変更履歴を取得できますか。
+- 転床、退院、表示更新遅延はどのように扱っていますか。
 
-## Physical environment
-- Room layout, bed spacing, metal obstacles and curtains?
-- Existing bed numbers and stable identifiers?
-- Power outlets and network availability for fixed receivers?
-- Security and infection-control restrictions on installation?
+## 病棟環境
+- 病室の間取り、ベッド間隔、金属製の障害物、カーテンの位置はどうなっていますか。
+- 病室番号とベッド番号に一意の識別子がありますか。
+- 固定受信機用の電源とネットワークを確保できますか。
+- 設置に関する情報セキュリティ・感染対策上の制約はありますか。
 
-## Blood-pressure monitor
-- Manufacturer, model, firmware and BLE specification?
-- Does it advertise while idle and during measurement?
-- Is there a documented BLE GATT service or approved SDK for measurements?
-- Can one device be shared safely across patients?
+## 血圧計
+- メーカー、型番、ファームウェア、BLE仕様は何ですか。
+- 待機中や測定中にBLE電波を発信しますか。
+- 測定値を取得するための公開GATT仕様またはメーカー提供SDKはありますか。
+- 複数患者で共用する際の運用上の制約はありますか。
 
-## Identity and governance
-- What independent bedside confirmation is currently required?
-- What patient identifiers may be used and who authorizes access?
-- What retention, access control, encryption and audit requirements apply?
+## 患者確認と情報管理
+- 現行業務では患者本人をどのように確認していますか。
+- 利用可能な患者識別子とアクセス権限の承認者は誰ですか。
+- データ保存期間、アクセス制御、暗号化、操作監査の要件は何ですか。
