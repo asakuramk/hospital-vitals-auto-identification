@@ -1,23 +1,23 @@
-# Phase 1: four-bed room positioning proof of concept
+# 第1段階：4床室での位置推定実証実験
 
-## Scope
-Use one simulated four-bed room, one BLE transmitter or compatible monitor and up to four ESP32 receivers. No real patient identifiers or EHR writes.
+## 実験範囲
+模擬4床室を1室用意し、BLE発信機または対応血圧計1台とESP32受信機を最大4台使用します。実在患者の識別情報は使用せず、電子カルテへの書き込みも行いません。
 
-## Capture
-For each radio observation log timestamp, receiver ID, device ID if observable, RSSI and test ground-truth bed. Record transmitter orientation, curtain state and human movement.
+## 取得データ
+電波受信ごとに、時刻、受信機ID、取得可能な機器ID、RSSI、実際に置いたベッド位置を記録します。発信機の向き、カーテンの開閉、人の移動も記録します。
 
-## Tests
-- Each of four beds: repeated stationary and measurement-position trials.
-- Movement between beds, hallway, doorway and adjacent room.
-- Curtains open/closed; monitor held/placed at different orientations.
-- Multiple BLE devices and interrupted network connectivity.
+## 試験項目
+- 4つのベッドそれぞれで、静置時と測定動作時の繰り返し試験を実施します。
+- ベッド間、廊下、出入口、隣室への移動を試験します。
+- カーテン開閉、血圧計の向き、置き方による影響を確認します。
+- BLE機器が複数ある場合やネットワークが途切れた場合を試験します。
 
-## Metrics
-Report confusion matrix per bed, false positive bedside assignment rate, unresolved rate, time-to-location, and packet loss. Include confidence thresholds and explicit abstention for ambiguous signals. Do not set a clinical acceptance threshold before hospital safety review.
+## 評価指標
+ベッド別の混同行列、誤ったベッドへの割当率、判定保留率、位置確定までの時間、通信欠損率を測定します。確信度が低い場合は自動確定せず「判定保留」とします。臨床利用の合格基準は院内安全審査前に決め打ちしません。
 
-## Decision gates
-1. Verify device BLE compatibility.
-2. Validate room-level location and then bed-level location; if unreliable, evaluate alternative positioning or bedside confirmation.
-3. Separately validate patient ID matching against authoritative assignments.
-4. Add measurement capture after positioning assessment.
-5. Evaluate EHR integration only after clinical safety and security validation.
+## 次段階への移行条件
+1. 血圧計のBLE対応状況を確認します。
+2. 病室単位、次にベッド単位の位置推定精度を検証します。不十分なら代替方式や患者確認手段を検討します。
+3. 正式なベッド割当情報と患者IDの照合方法を別途検証します。
+4. 位置推定の評価後に測定値取得を追加します。
+5. 臨床安全性・情報セキュリティの検証後に電子カルテ連携を検討します。
